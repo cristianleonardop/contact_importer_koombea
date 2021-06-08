@@ -4,5 +4,9 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root to: 'rails/welcome#index'
+  namespace :users do
+    resources :contacts
+  end
+
+  root to: 'users/contacts#index'
 end

@@ -1,0 +1,26 @@
+<h2>Contacts list</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Date of Birth</th>
+    <th>Phone</th>
+    <th>Address</th>
+    <th>Credit Card</th>
+    <th>Franchise</th>
+    <th>Email</th>
+  </tr>
+  <% @contacts.each do |contact| %>
+    <tr>
+      <td><%= contact.name %></td>
+      <td><%= contact.birth_date %></td>
+      <td><%= contact.phone %></td>
+      <td><%= contact.address %></td>
+      <td><%= contact.credit_card %></td>
+      <td><%= contact.franchise %></td>
+      <td><%= contact.email %></td>
+    </tr>
+  <% end %>
+
+  <%== pagy_nav(@pagy) %>
+</table>
