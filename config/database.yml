@@ -83,3 +83,4 @@ production:
   database: contact_importer_koombea_production
   username: contact_importer_koombea
   password: <%= ENV['CONTACT_IMPORTER_KOOMBEA_DATABASE_PASSWORD'] %>
+  pool: <%= ENV['RAILS_MAX_THREADS'] || 10 %>

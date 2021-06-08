@@ -1,8 +1,8 @@
 require 'csv'
 
 class ContactFileImporterService
-  def initialize(contact_file)
-    @contact_file = contact_file
+  def initialize(contact_file_id)
+    @contact_file = ContactFile.find_by(id: contact_file_id)
     @contact_file.start_process!
   end
 

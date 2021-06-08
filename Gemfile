@@ -28,6 +28,8 @@ gem 'pry'
 gem 'draper'
 gem 'pagy'
 gem 'aasm'
+gem 'sidekiq'
+gem 'redis'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
