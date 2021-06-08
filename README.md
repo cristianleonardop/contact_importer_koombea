@@ -1,24 +1,55 @@
-# README
+##### Prerequisites
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The setups steps expect following tools installed on the system.
 
-Things you may want to cover:
+- Github
+- Ruby [2.6.3](https://github.com/organization/project-name/blob/master/.ruby-version#L1)
+- Rails [6.0.3.7](https://github.com/organization/project-name/blob/master/Gemfile#L12)
+- Node [11.11.0](https://nodejs.org/es/download/releases/)
+- Redis
 
-* Ruby version
+##### 1. Check out the repository
 
-* System dependencies
+```bash
+git clone https://github.com/cristianleonardop/contact_importer_koombea.git
+```
 
-* Configuration
+##### 2. Yarn install and bundle install
 
-* Database creation
+Run the following commands to resolve all the project dependencies(You can use npm instead of yarn).
 
-* Database initialization
+```ruby
+yarn install
+bundle install
+```
 
-* How to run the test suite
+##### 2. Create and setup the database
 
-* Services (job queues, cache servers, search engines, etc.)
+Run the following commands to create and setup the database.
 
-* Deployment instructions
+```ruby
+rails db:create
+rails db:migrate
+```
 
-* ...
+##### 3. Master.key file
+
+You need to create a master.key file to use the credentials.yml.enc
+
+Note: Contact me for further instructions
+
+##### 4. Start the Rails server and Sidekiq
+
+You can start the rails server using the command given below.
+
+```ruby
+rails server
+```
+and the start sidekiq
+```ruby
+bundle exec sidekiq
+```
+
+And now you can visit the site with the URL http://localhost:3000
+
+Also, you can to go live here: https://hidden-eyrie-52356.herokuapp.com/
