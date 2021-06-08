@@ -1,0 +1,18 @@
+<h2>Contact Files</h2>
+
+<table>
+  <tr>
+    <th>Filename</th>
+    <th>Upload at</th>
+    <th>State</th>
+  </tr>
+  <% @contact_files.each do |contact_file| %>
+    <tr>
+      <td><%= contact_file.filename %></td>
+      <td><%= contact_file.created_at %></td>
+      <td><%= contact_file.state %></td>
+    </tr>
+  <% end %>
+
+  <%== pagy_nav(@pagy) %>
+</table>

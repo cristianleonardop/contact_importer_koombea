@@ -1,0 +1,43 @@
+<h2>Import Contacts</h2>
+
+<p>Please fill the fields according with the names that you use in your contacts file.
+  i.e: Contact Name -> Contacts, the column in my csv file that contains the contact name is Contacts, so,
+  in the filed Name you need to put Contacts in order to match it</p>
+<%= form_with model: [:users, @contact_file] do |form| %>
+
+  <p> In your csv file, what names you assign to the following values:</p>
+  <%= form.fields_for :match_columns do |header| %>
+    <div>
+      <%= header.label :contact_name %>
+      <%= header.text_field :name, required: true %>
+    </div>
+    <div>
+      <%= header.label :contact_birth_date %>
+      <%= header.text_field :birth_date, required: true %>
+    </div>
+    <div>
+      <%= header.label :contact_phone %>
+      <%= header.text_field :phone, required: true %>
+    </div>
+    <div>
+      <%= header.label :contact_address %>
+      <%= header.text_field :address, required: true %>
+    </div>
+    <div>
+      <%= header.label :contact_credit_card %>
+      <%= header.text_field :credit_card, required: true %>
+    </div>
+    <div>
+      <%= header.label :contact_franchise %>
+      <%= header.text_field :franchise, required: true %>
+    </div>
+    <div>
+      <%= header.label :contact_email %>
+      <%= header.text_field :email, required: true %>
+    </div>
+  <% end %>
+
+  <%= form.file_field :contacts_file %>
+
+  <%= form.submit "Import contacts" %>
+<% end %>

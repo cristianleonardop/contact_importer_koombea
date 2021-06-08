@@ -11,6 +11,13 @@
 
   <body>
     <%= render 'shared/flash'%>
+    <ul>
+      <li><a href="<%= users_contacts_path %>">Contacts</a></li>
+      <li><a href="<%= users_contact_logs_path %>">Contact Logs</a></li>
+      <li><a href="<%= users_contact_files_path %>">Contact Files</a></li>
+      <li><a href="<%= new_users_contact_file_path %>">Import Contact</a></li>
+    </ul>
+
     <%= yield %>
   </body>
 </html>

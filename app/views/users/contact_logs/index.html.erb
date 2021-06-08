@@ -1,0 +1,16 @@
+<h2>Contacts Logs</h2>
+
+<table>
+  <tr>
+    <th>Contact Details</th>
+    <th>Errors</th>
+  </tr>
+  <% @contact_logs.each do |contact| %>
+    <tr>
+      <td><%= contact.contact_details %></td>
+      <td><%= contact.errors_details %></td>
+    </tr>
+  <% end %>
+
+  <%== pagy_nav(@pagy) %>
+</table>

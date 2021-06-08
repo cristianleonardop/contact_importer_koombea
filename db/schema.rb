@@ -10,10 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_08_000047) do
+ActiveRecord::Schema.define(version: 2021_06_08_045618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contact_files", force: :cascade do |t|
+    t.string "filename", null: false
+    t.text "content", default: ""
+    t.jsonb "match_columns", default: {}
+    t.string "state"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_contact_files_on_user_id"
+  end
+
+  create_table "contact_logs", force: :cascade do |t|
+    t.jsonb "contact_details"
+    t.jsonb "errors_details"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_contact_logs_on_user_id"
+  end
 
   create_table "contacts", force: :cascade do |t|
     t.string "name", null: false

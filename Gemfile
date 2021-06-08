@@ -27,6 +27,7 @@ gem 'attr_encrypted'
 gem 'pry'
 gem 'draper'
 gem 'pagy'
+gem 'aasm'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
