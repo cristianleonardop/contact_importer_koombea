@@ -20,6 +20,8 @@ class ContactFileImporterService
         user.contact_logs.create(contact_details: contact.attributes, errors_details: contact.errors.messages)
       end
     end
+
+    @contact_file.finish_process!
   rescue StandardError => e
     @contact_file.fail_process!
   end
